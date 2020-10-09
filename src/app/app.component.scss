@@ -1,16 +1,35 @@
 #appWrapper {
-  --header-height: 35vh;
+  // --header-height: 35vh;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, 1fr);
+  height: 100vh;
 }
 
 app-header {
+  grid-row: 1 / 5;
+  grid-column: 1 / 2;
   display: block;
-  height: var(--header-height);
+  // height: var(--header-height);
+  z-index: 1;
+}
+
+app-data-display {
+  grid-row: 3 / 6;
+  grid-column: 1 / 2;
+  display: block;
+  margin: -3.5rem 2.5rem 0;
+  z-index: 2;
 }
 
 app-map {
+  grid-row: 4 / 13;
+  grid-column: 1 / 2;
   display: block;
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  // height: calc(100vh - var(--header-height));
+  z-index: 1;
 }
 
 

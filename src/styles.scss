@@ -8,8 +8,12 @@
 }
 
 html {
+  --very-dark-grey: hsl(0, 0%, 17%);
+  --dark-grey: hsl(0, 0%, 59%);
+
   font-family: 'Rubik', sans-serif;
   font-size: 10px;
+  // overflow: hidden;
 }
 
 body {

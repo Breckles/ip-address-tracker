@@ -1,6 +1,4 @@
 header {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
 
@@ -18,25 +16,26 @@ header::after {
 }
 
 h1 {
-  --font-size: 2.6rem;
+  --h1-font-size: 2.6rem;
 
-  padding: var(--font-size);
+  padding: var(--h1-font-size) 0 0;
 
   color: white;
   font-weight: 500;
-  font-size: var(--font-size);
+  font-size: var(--h1-font-size);
 }
 
 form {
+  --form-font-size: 1.8rem;
   --border-radius: 1.5rem;
-  --font-size: 1.8rem;
 
   display: flex;
   justify-content: center;
-  padding-bottom: var(--font-size);
+  width: 100%;
+  padding: 2.5rem 2rem 0;
 
   input {
-    padding: var(--font-size) calc(var(--font-size) + 1rem);
+    padding: var(--form-font-size) calc(var(--form-font-size) + 1rem);
 
     border: none;
 
@@ -46,7 +45,7 @@ form {
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
     font-family: 'Rubik', sans-serif;
-    font-size: var(--font-size);
+    font-size: var(--form-font-size);
   }
 
   button {
