@@ -39,6 +39,10 @@ form {
     padding: var(--font-size) calc(var(--font-size) + 1rem);
 
     border: none;
+
+    // reset border radius on iOS
+    -webkit-appearance: none;
+
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
     font-family: 'Rubik', sans-serif;
@@ -52,5 +56,9 @@ form {
     border: none;
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+
+    img {
+      display: block;
+    }
   }
 }
