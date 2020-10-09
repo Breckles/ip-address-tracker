@@ -1,0 +1,12 @@
+<header>
+  <h1>IP Address Tracker</h1>
+  <form [formGroup]="form"
+        (ngSubmit)="submit()">
+    <input type="search"
+           [formControl]="ipAddress">
+    <button type="submit">
+      <img src="../../assets/images/icon-arrow.svg"
+           alt="">
+    </button>
+  </form>
+</header>
