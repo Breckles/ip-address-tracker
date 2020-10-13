@@ -10,8 +10,25 @@ export class MapComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // Default map view
     let map = L.map('map').setView([51.505, -0.09], 13);
-    console.log(map);
+
+    // set icon for marker
+    let locationIcon = L.icon({
+      iconUrl: '../assets/images/icon-location.svg',
+    });
+
+    let marker = L.marker([51.5, -0.09], { icon: locationIcon }).addTo(map);
+
+    map.on('viewreset', (event) => {
+      marker.setLatLng(map.getCenter());
+    });
+
+    // ask for user's location permission, and set view to location if allowed
+    map.locate({ setView: true, maxZoom: 16 });
+
+    // If user gave location permission, set marker to user location
+    marker.setLatLng(map.getCenter());
 
     L.tileLayer(
       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
@@ -27,27 +44,7 @@ export class MapComponent implements OnInit {
       }
     ).addTo(map);
 
-    let locationIcon = L.icon({
-      iconUrl: '../assets/images/icon-location.svg',
-    });
-
-    let marker = L.marker([51.5, -0.09], { icon: locationIcon }).addTo(map);
-
-    let circle = L.circle([51.508, -0.11], {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 500,
-    }).addTo(map);
-
-    var polygon = L.polygon([
-      [51.509, -0.08],
-      [51.503, -0.06],
-      [51.51, -0.047],
-    ]).addTo(map);
-
-    marker.bindPopup('<b>Hello world!</b><br>I am a popup.').openPopup();
-    circle.bindPopup('I am a circle.');
-    polygon.bindPopup('I am a polygon.');
+    console.log(marker.getLatLng());
+    console.log(map.getCenter());
   }
 }
