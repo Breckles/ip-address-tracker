@@ -9,11 +9,11 @@ header {
   background-position: 50% top;
 }
 
-header::after {
-  content: '';
-  display: block;
-  flex: 1fr;
-}
+// header::after {
+//   content: '';
+//   display: block;
+//   flex: 1fr;
+// }
 
 h1 {
   --h1-font-size: 2.6rem;
@@ -29,10 +29,13 @@ form {
   --form-font-size: 1.8rem;
   --border-radius: 1.5rem;
 
+  position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
   padding: 2.5rem 2rem 0;
+
+  border-radius: var(--border-radius);
 
   input {
     padding: var(--form-font-size) calc(var(--form-font-size) + 1rem);
@@ -48,6 +51,24 @@ form {
     font-size: var(--form-font-size);
   }
 
+  span#errorMessage {
+    position: absolute;
+    left: 3.5rem;
+    bottom: -1.5rem;
+
+    color: red;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  input.ng-touched.ng-invalid {
+    box-shadow:
+      2px 0 red inset,
+      0 2px red inset,
+      -2px 0 red inset,
+      0 -2px red inset;
+  }
+
   button {
     padding: 0 2.5rem;
 
@@ -58,6 +79,36 @@ form {
 
     img {
       display: block;
+    }
+  }
+}
+
+//// Screen size >= 1440px /////////////////////////////////////////////
+
+@media screen and (min-width: 1440px) {
+  h1 {
+    --h1-font-size: 3.2rem;
+  }
+
+  form {
+    padding: 2.5rem 30% 0;
+
+    input {
+      flex: 1;
+    }
+
+    span#errorMessage {
+      left: 31%;
+      bottom: -1.5rem;
+
+      color: red;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: #4B4A54;
     }
   }
 }

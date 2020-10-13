@@ -1,35 +1,40 @@
 #appWrapper {
-  // --header-height: 35vh;
-
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: repeat(16, minmax(5rem, 1fr));
   height: 100vh;
 }
 
 app-header {
-  grid-row: 1 / 5;
+  grid-row: 1 / 6;
   grid-column: 1 / 2;
   display: block;
-  // height: var(--header-height);
   z-index: 1;
 }
 
 app-data-display {
-  grid-row: 3 / 6;
+  grid-row: 4 / 8;
   grid-column: 1 / 2;
   display: block;
-  margin: -3.5rem 2.5rem 0;
+  margin: 0 2.5rem 0;
   z-index: 2;
 }
 
 app-map {
-  grid-row: 4 / 13;
+  grid-row: 6 / 17;
   grid-column: 1 / 2;
   display: block;
   width: 100%;
-  // height: calc(100vh - var(--header-height));
   z-index: 1;
+}
+
+//// Screen size >= 1440px ///////////////////////////////////////////////
+
+@media screen and (min-width: 1440px) {
+  app-data-display {
+    grid-row: 5 / 7;
+    margin-top: -2rem;
+  }
 }
 
 

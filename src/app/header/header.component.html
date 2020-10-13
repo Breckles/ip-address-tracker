@@ -3,7 +3,10 @@
   <form [formGroup]="form"
         (ngSubmit)="submit()">
     <input type="search"
-           [formControl]="ipAddress">
+           placeholder="Search for any IP address or domain"
+           formControlName="ipAddress">
+    <span id="errorMessage"
+          *ngIf="form.get('ipAddress').invalid && form.get('ipAddress').touched">Please enter a valid IP address</span>
     <button type="submit">
       <img src="../../assets/images/icon-arrow.svg"
            alt="">
