@@ -9,12 +9,6 @@ header {
   background-position: 50% top;
 }
 
-// header::after {
-//   content: '';
-//   display: block;
-//   flex: 1fr;
-// }
-
 h1 {
   --h1-font-size: 2.6rem;
 
@@ -34,11 +28,13 @@ form {
   justify-content: center;
   width: 100%;
   padding: 2.5rem 2rem 0;
+  margin-bottom: 1rem;
 
   border-radius: var(--border-radius);
 
   input {
-    padding: var(--form-font-size) calc(var(--form-font-size) + 1rem);
+    flex: 1;
+    padding: 2rem;
 
     border: none;
 
@@ -49,6 +45,7 @@ form {
     border-bottom-left-radius: var(--border-radius);
     font-family: 'Rubik', sans-serif;
     font-size: var(--form-font-size);
+    text-overflow: ellipsis;
   }
 
   span#errorMessage {
@@ -83,9 +80,21 @@ form {
   }
 }
 
-//// Screen size >= 1440px /////////////////////////////////////////////
+//// Screen size >= 675px //////////////////////////////////////////////
+@media screen and (min-width: 675px) {
+  form {
+    padding: 2.5rem 20% 0;
 
-@media screen and (min-width: 1440px) {
+    span#errorMessage {
+      left: 21%;
+    }
+  }
+
+}
+
+//// Screen size >= 1175px /////////////////////////////////////////////
+
+@media screen and (min-width: 1175px) {
   h1 {
     --h1-font-size: 3.2rem;
   }
@@ -93,17 +102,8 @@ form {
   form {
     padding: 2.5rem 30% 0;
 
-    input {
-      flex: 1;
-    }
-
     span#errorMessage {
       left: 31%;
-      bottom: -1.5rem;
-
-      color: red;
-      font-size: 1rem;
-      letter-spacing: 1px;
     }
 
     button:hover {

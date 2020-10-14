@@ -29,9 +29,9 @@ ul#data {
 }
 
 
-//// Screen size >= 1440px /////////////////////////////////////////////
+//// Screen size >= 1175px /////////////////////////////////////////////
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1175px) {
   #dataDisplayWrapper {
     margin: 0 14rem;
   }
@@ -40,7 +40,7 @@ ul#data {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    padding: 4rem 2rem;
+    // padding: 4rem 2rem;
 
     li {
       flex: 1;
@@ -54,6 +54,10 @@ ul#data {
         margin: -0.5rem 0 1.5rem;
         font-size: 1.2rem;
       }
+    }
+
+    li:last-child {
+      border-right: none;
     }
 
   }
