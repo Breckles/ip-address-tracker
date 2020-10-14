@@ -2,19 +2,19 @@
   <ul id="data">
     <li>
       <h2>IP ADDRESS</h2>
-      192.212.174.101
+      {{ipInfo.ipAddress}}
     </li>
     <li>
       <h2>LOCATION</h2>
-      Brooklyn, NY 10001
+      {{ipInfo.city}}, {{ipInfo.region}} {{ipInfo.postalCode}}
     </li>
     <li>
       <h2>TIMEZONE</h2>
-      UTC -05:00
+      UTC {{ipInfo.timezone}}
     </li>
     <li>
       <h2>ISP</h2>
-      SpaceX Starlink
+      {{ipInfo.isp}}
     </li>
   </ul>
 </div>
